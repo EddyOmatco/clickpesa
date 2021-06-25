@@ -15,12 +15,13 @@ URL / Website monitoring script that monitors more than 3 URL’s. It checks the
 - PDO PHP Extension
 - Tokenizer PHP Extension
 - XML PHP Extension
+- Composer
 
 *****************************************************
                       How to run
 *****************************************************
 1. clone the project from https://github.com/EddyOmatco/clickpesa.git
-2. save the cloned project to web server's public folder.
+2. save the cloned project to web server's public folder and run "composer install"
 3. Run 'php artisan mighrate'
 4. to enable cron, type "crontab -e" and paste "* * * * * php /path/to/artisan schedule:run 1>> /dev/null 2>&1" (eliminate brackets)
 5. run "php artisan serve" to run the app.
