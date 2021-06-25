@@ -115,9 +115,11 @@ tr:nth-child(even) {
       <span style="color: blue;">Status unavailable</span>
       @else
         @if($url->status=='Alive')
-        <span style="color: green;">{{$url->status}}</span>
+        <span style="color: green;">{{$url->status}}</span><br>
+        <small>{{\Carbon\Carbon::create($url->updated_at)->diffForHumans()}}</smal>
         @else
-        <span style="color: red;">{{$url->status}}</span>
+        <span style="color: red;">{{$url->status}} </span><br>
+        <small>{{\Carbon\Carbon::create($url->updated_at)->diffForHumans()}}</smal>
         @endif
       @endif
    </td>

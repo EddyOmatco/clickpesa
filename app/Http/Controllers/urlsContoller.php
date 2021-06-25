@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use DB;
 use Http;
 use Log;
+use Carbon\Carbon;
 
 class urlsContoller extends Controller
 {
@@ -57,7 +58,7 @@ class urlsContoller extends Controller
                 $stat ='Unavailable';
             }
             
-            DB::table('urls')->where('id',$url->id)->update(['status'=>$stat]);
+            DB::table('urls')->where('id',$url->id)->update(['status'=>$stat,'updated_at'=>now()]);
 
             log::info(json_encode($status));
         }
